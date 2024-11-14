@@ -54,7 +54,7 @@
       </li>
       <li><strong>Frontend</strong><br />
         <code>cd frontend</code><br />
-        <code>npm start</code>
+        <code>npm run dev</code>
       </li>
     </ul>
   </li>
