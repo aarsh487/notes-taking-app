@@ -16,17 +16,12 @@ const app = express();
 
 app.use(express.json());
 
-const allowedOrigins = ['https://notes-taking-app-8fly.vercel.app'];
+app.options('*', cors());
 
 app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true, // Allow cookies if needed
+    origin: 'https://notes-taking-app-8fly.vercel.app',  // Your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // If you're using cookies or other credentials
 }));
 
 
