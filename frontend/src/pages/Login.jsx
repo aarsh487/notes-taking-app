@@ -77,7 +77,7 @@ export const Login = () => {
 
                     <p className='text-sm text-center mt-4'>
                         Not registered yet?{" "}
-                        <Link to="/signup" className='font-medium text-primary underline'>
+                        <Link to="/" className='font-medium text-primary underline'>
                             Create an account
                         </Link>
                     </p>
