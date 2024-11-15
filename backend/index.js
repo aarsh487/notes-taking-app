@@ -3,8 +3,7 @@ dotenv.config()
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import config from './config.json' assert { type: "json"};
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
 mongoose.connect(process.env.MONGO_URL)
 
