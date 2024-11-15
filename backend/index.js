@@ -19,7 +19,7 @@ app.use(express.json());
 app.options('*', cors());
 
 app.use(cors({
-    origin: 'https://notes-taking-app-8fly.vercel.app',  // Your frontend URL
+    origin: 'https://notlet.vercel.app',  // Your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // If you're using cookies or other credentials
 }));
