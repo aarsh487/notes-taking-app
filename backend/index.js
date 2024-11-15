@@ -16,13 +16,25 @@ const app = express();
 
 app.use(express.json());
 
-app.options('*', cors());
+const allowedOrigins = [
+    'https://notlet.vercel.app'
+];
 
 app.use(cors({
-    origin: 'https://notlet.vercel.app',  // Your frontend URL
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            // Allow requests from allowed origins
+            callback(null, true);
+        } else {
+            // Reject requests from non-allowed origins
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // If you're using cookies or other credentials
+    allowedHeaders: ['Content-Type', 'Authorization'], // Optional headers
 }));
+
+app.options('*', cors());
 
 
 
